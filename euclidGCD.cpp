@@ -11,23 +11,29 @@ using namespace std;
 int calcGcd(int a, int b) {
     int c;
         
+    //Switch negative inputs to positives using absolute values
     if ( a < 0) {
         a = abs(a);
     }
 
-    else if (b < 0) {
+    if (b < 0) {
         b = abs(b);
     }
 
-    else if (a + b == 0) {
-        return -1;
+    //If same number is inputted twice, the GCD is the number
+    if (a + b == 0) {
+        return a;
     }
 
+    
+    //Initialize the value
     c = b;
 
+    //Find GCD by finding the remainder for a = q * b + r
+    //Repeat until r = 0
     while ( a > 0) {
         c = a;
-        a = b % a;
+        a = b % a;          //Store the remainder as a for next loop run
         b = c;
     }
     return c;
