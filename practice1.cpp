@@ -46,13 +46,11 @@ class Arithmetic {
 
 int main(int argc, char *argv[]){
 
-    cout<<"Hello Harrison\n";
+    Arithmetic<int> ar(5,7);
+    Arithmetic<float> br(10.43, 3.41);
 
-    int A[5] = {1,2,3,4,5};
-
-    for(int x : A) {
-        printf("Number: %d\n", A[x]);
-    }
+    printf("ar sum: %d\n ", ar.add());
+    printf("br difference: %f\n ", br.sub());
 
     return 0;
 }
